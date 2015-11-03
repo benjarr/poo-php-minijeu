@@ -98,7 +98,7 @@ class PersonnagesManager
 
 		// Sinon c'est qu'on veut vérifier que le nom existe ou pas.
 		// Exécution d'une requête COUNT() avec une clause WHERE, et retourne un boolean.
-		$q = $this->db->prepare('SELECT COUNT(*) FROM personnages WHERE nom = :nom');
+		$q = $this->_db->prepare('SELECT COUNT(*) FROM personnages WHERE nom = :nom');
 		$q->execute([':nom' => $info]);
 
 		return (bool) $q->fetchColumn();

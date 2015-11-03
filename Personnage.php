@@ -51,6 +51,11 @@ class Personnage
 		return self::PERSONNAGE_FRAPPE;
 	}
 
+	public function nomValide()
+	{
+		return !empty($this->_nom);
+	}
+
 	// GETTERS ET SETTERS //
 
 	public function degats() { return $this->_degats; }
@@ -68,7 +73,7 @@ class Personnage
 	public function setId($id)
 	{
 		$id = (int) $id;
-		
+
 		if ($id > 0) {
 			$this->_id = $id;
 		}
